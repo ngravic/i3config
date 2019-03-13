@@ -57,9 +57,11 @@ echo "gtk-theme-name=\"Breeze-dark-gtk\"" >> $SUDO_HOME/.gtkrc-2.0
 chown $SUDO_USER $SUDO_HOME/.gtkrc-2.0
 
 # copy breeze dark theme
+mkdir -p /usr/share/themes/
 cp -r Breeze-dark-gtk /usr/share/themes/Breeze-dark-gtk
 
 # copy icons fonts
+mkdir -p /usr/local/share/fonts
 cp fontawesome/* /usr/local/share/fonts/
 
 # copy i3 config
