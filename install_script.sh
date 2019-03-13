@@ -79,3 +79,12 @@ chown -R $SUDO_USER $SUDO_HOME/.config/rofi/
 mkdir -p $SUDO_HOME/.config/Code/User
 echo "{ 'window.titleBarStyle' : 'custom' }" > $SUDO_HOME/.config/Code/User/settings.json
 chown -R $SUDO_USER $SUDO_HOME/.config/Code
+
+
+# ask restart
+read -p "Want to restart the machine? " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+  shutdown -r now
+fi
