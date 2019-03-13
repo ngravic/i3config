@@ -48,7 +48,7 @@ wget http://ftp.nl.debian.org/debian/pool/main/p/playerctl/playerctl_2.0.1-1_amd
 dpkg -i /tmp/lib.deb /tmp/player.deb
 
 # start i3 when login 
-echo "if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then;startx;fi" > $SUDO_HOME/.bash_profile
+echo "if [[ -z \$DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then;startx;fi" > $SUDO_HOME/.bash_profile
 chown $SUDO_USER $SUDO_HOME/.bash_profile
 
 # set icon theme 
