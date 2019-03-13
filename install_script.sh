@@ -9,7 +9,7 @@ fi
 HOME_SUDO=$(eval echo ~$SUDO_USER)
 DISTRO=bionic   #v18
 #DISTRO=xenial  #v16
-APT_REPOS={ "ppa:gnome-terminator", "ppa:jasonpleau/rofi", "ppa:numix/ppa" }
+APT_REPOS={"ppa:gnome-terminator","ppa:jasonpleau/rofi","ppa:numix/ppa"}
 APT_PATH=/etc/apt/sources.list
 
 # modify apt sources 
