@@ -6,7 +6,7 @@ if [ "$EUID" -ne 0 ]
 fi
 
 # some vars
-HOME_SUDO=$(eval echo ~$SUDO_USER)
+SUDO_HOME=$(eval echo ~$SUDO_USER)
 DISTRO=bionic   #v18
 #DISTRO=xenial  #v16
 APT_REPOS={"ppa:gnome-terminator","ppa:jasonpleau/rofi","ppa:numix/ppa"}
