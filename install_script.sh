@@ -9,7 +9,7 @@ fi
 SUDO_HOME=$(eval echo ~$SUDO_USER)
 DISTRO=bionic   #v18
 #DISTRO=xenial  #v16
-APT_REPOS={"ppa:gnome-terminator","ppa:jasonpleau/rofi","ppa:numix/ppa"}
+APT_REPOS=("ppa:gnome-terminator" "ppa:jasonpleau/rofi" "ppa:numix/ppa")
 APT_PATH=/etc/apt/sources.list
 
 # modify apt sources 
@@ -27,7 +27,7 @@ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 931FF8E79
 
 # add repos
 apt install software-properties-common -y   # needed for add-apt-repository
-for rep in $APT_REPOS; do
+for rep in "${APT_REPOS[@]}"; do
   add-apt-repository $rep -n -y
 done
 
@@ -48,7 +48,7 @@ wget http://ftp.nl.debian.org/debian/pool/main/p/playerctl/playerctl_2.0.1-1_amd
 dpkg -i /tmp/lib.deb /tmp/player.deb
 
 # start i3 when login 
-echo "if [[ -z \$DISPLAY ]] && [[ \$\(tty\) = /dev/tty1 ]]; then;startx;fi" > $SUDO_HOME/.bash_profile
+echo "if [[ -z \$DISPLAY ]] && [[ \$\(tty\) = /dev/tty1 ]]; then\startx\fi" > $SUDO_HOME/.bash_profile
 chown $SUDO_USER $SUDO_HOME/.bash_profile
 
 # set icon theme 
