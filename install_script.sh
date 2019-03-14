@@ -77,7 +77,7 @@ chown -R $SUDO_USER $SUDO_HOME/.config/rofi/
 
 # VS Code custom title bar
 mkdir -p $SUDO_HOME/.config/Code/User
-echo "{ 'window.titleBarStyle' : 'custom' }" > $SUDO_HOME/.config/Code/User/settings.json
+echo "{ \"window.titleBarStyle\" : \"custom\" }" > $SUDO_HOME/.config/Code/User/settings.json
 chown -R $SUDO_USER $SUDO_HOME/.config/Code
 
 
