@@ -20,13 +20,14 @@ echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> $A
 echo "deb http://repository.spotify.com stable non-free" >> $APT_PATH
 echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" >> $APT_PATH
 
+
+apt install software-properties-common gnupg -y   # needed for add-apt-repository and add apt-key
 # gpg signs repos
 wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 wget -q -O - https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 931FF8E79F0876134EDDBDCCA87FF9DF48BF1C90
 
 # add repos
-apt install software-properties-common -y   # needed for add-apt-repository
 for rep in "${APT_REPOS[@]}"; do
   add-apt-repository $rep -n -y
 done
