@@ -50,12 +50,12 @@ dpkg -i /tmp/lib.deb /tmp/player.deb
 
 # start i3 when login 
 echo "if [[ -z \$DISPLAY ]] && [[ \$(tty) = /dev/tty1 ]]; then startx; fi" > $SUDO_HOME/.bash_profile
-chown $SUDO_USER $SUDO_HOME/.bash_profile
+chown $SUDO_USER:$SUDO_USER $SUDO_HOME/.bash_profile
 
 # set icon theme 
 echo "gtk-icon-theme-name=\"Numix-Circle\"" > $SUDO_HOME/.gtkrc-2.0
 echo "gtk-theme-name=\"Breeze-dark-gtk\"" >> $SUDO_HOME/.gtkrc-2.0
-chown $SUDO_USER $SUDO_HOME/.gtkrc-2.0
+chown $SUDO_USER:$SUDO_USER $SUDO_HOME/.gtkrc-2.0
 
 # copy breeze dark theme
 mkdir -p /usr/share/themes/
@@ -69,17 +69,17 @@ cp fontawesome/* /usr/local/share/fonts/
 mkdir -p $SUDO_HOME/.config/i3/i3status
 cp i3/config $SUDO_HOME/.config/i3/
 cp i3/i3status/config $SUDO_HOME/.config/i3/i3status/
-chown -R $SUDO_USER $SUDO_HOME/.config/i3
+chown -R $SUDO_USER:$SUDO_USER $SUDO_HOME/.config/i3
 
 # copy rofi theme
 mkdir -p $SUDO_HOME/.config/rofi/
 cp rofi/* $SUDO_HOME/.config/rofi/
-chown -R $SUDO_USER $SUDO_HOME/.config/rofi/
+chown -R $SUDO_USER:$SUDO_USER $SUDO_HOME/.config/rofi/
 
 # VS Code custom title bar
 mkdir -p $SUDO_HOME/.config/Code/User
 echo "{ \"window.titleBarStyle\" : \"custom\" }" > $SUDO_HOME/.config/Code/User/settings.json
-chown -R $SUDO_USER $SUDO_HOME/.config/Code
+chown -R $SUDO_USER:$SUDO_USER $SUDO_HOME/.config/Code
 
 
 # ask restart
